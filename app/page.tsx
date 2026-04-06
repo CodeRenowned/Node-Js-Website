@@ -2,35 +2,87 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getRecentBlogPosts, getFeaturedImage, getExcerpt, formatDate } from '@/lib/wordpress'
 
+// ── Client logos data ─────────────────────────────────────────────────────────
+
+const CLIENT_LOGOS = [
+  { name: 'Carin',          src: '/images/clients/carin.png' },
+  { name: 'Frugal Testing', src: '/images/clients/frugal-testing.png' },
+  { name: 'Kajaria',        src: '/images/clients/kajaria.png' },
+  { name: 'IM Gears',       src: '/images/clients/im-gears.png' },
+  { name: 'Astra Aerospace', src: '/images/clients/astra-aerospace.png' },
+]
+
 // ── Hero ─────────────────────────────────────────────────────────────────────
 
 function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-navy via-[#1d1b4c] to-[#0f0e2e] overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary rounded-full translate-y-1/2 -translate-x-1/3 blur-3xl" />
-      </div>
-      <div className="relative container mx-auto px-5 py-20 lg:py-32">
-        <div className="max-w-3xl">
-          <span className="section-label">B2B SEO Agency</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-            Turn Search Into Your{' '}
-            <span className="text-primary">Strongest</span>{' '}
-            Sales Channel
+    <section className="bg-white">
+      {/* Main banner */}
+      <div className="container mx-auto px-5 py-20 lg:py-28">
+        <div className="max-w-4xl">
+          {/* H1 — keyword label */}
+          <h1
+            className="font-heading font-semibold mb-5"
+            style={{ fontSize: '18px', color: '#11AAA6' }}
+          >
+            B2B SEO Agency for Industrial &amp; Technology Companies
           </h1>
-          <p className="text-white/70 text-lg font-body mb-10 max-w-xl leading-relaxed">
-            We blend AI-powered SEO, Answer Engine Optimization, and content strategy to
-            help ambitious B2B brands dominate search — and convert traffic into revenue.
+
+          {/* H2 — main headline */}
+          <h2
+            className="font-heading font-bold text-navy leading-tight mb-6"
+            style={{ fontSize: 'clamp(32px, 5vw, 50px)' }}
+          >
+            Strategic B2B SEO That{' '}
+            <span style={{ color: '#FF610B' }}>Turns Search Intent</span>{' '}
+            Into Qualified Business Opportunities
+          </h2>
+
+          {/* Paragraph */}
+          <p
+            className="font-body text-gray-600 leading-relaxed mb-10 max-w-2xl"
+            style={{ fontSize: '18px' }}
+          >
+            Helping B2B companies capture high-intent search demand and turn organic
+            traffic into qualified leads through strategic B2B search engine optimization.
           </p>
+
+          {/* CTAs */}
           <div className="flex flex-wrap gap-4">
             <Link href="/contact" className="btn-primary">
-              Get A Free Strategy Call
+              Book Free SEO Strategy Call
             </Link>
-            <Link href="/case-studies" className="btn-ghost">
-              See Our Results
+            <Link href="/services" className="btn-outline">
+              Explore B2B SEO Services
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Client logos marquee */}
+      <div className="border-t border-gray-100 py-12 bg-white">
+        <div className="container mx-auto px-5 mb-8">
+          <p className="text-center font-heading font-semibold text-navy text-lg">
+            The Go-To SEO Partner for B2B Marketing Leaders Globally
+          </p>
+        </div>
+        <div className="overflow-hidden">
+          {/* Duplicated list for seamless loop */}
+          <div className="animate-marquee flex items-center gap-16 px-8">
+            {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={140}
+                  height={56}
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
