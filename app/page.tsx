@@ -17,57 +17,52 @@ const CLIENT_LOGOS = [
 function Hero() {
   return (
     <section className="bg-white">
-      {/* Main banner */}
-      <div className="container mx-auto px-5 py-20 lg:py-28">
-        <div className="max-w-4xl">
-          {/* H1 — keyword label */}
-          <h1
-            className="font-heading font-semibold mb-5"
-            style={{ fontSize: '18px', color: '#11AAA6' }}
-          >
-            B2B SEO Agency for Industrial &amp; Technology Companies
-          </h1>
+      {/* Main banner — centred */}
+      <div className="container mx-auto px-5 py-20 lg:py-28 text-center">
+        {/* H1 — keyword label */}
+        <h1
+          className="font-heading font-semibold mb-5"
+          style={{ fontSize: '18px', color: '#11AAA6' }}
+        >
+          B2B SEO Agency for Industrial &amp; Technology Companies
+        </h1>
 
-          {/* H2 — main headline */}
-          <h2
-            className="font-heading font-bold text-navy leading-tight mb-6"
-            style={{ fontSize: 'clamp(32px, 5vw, 50px)' }}
-          >
-            Strategic B2B SEO That{' '}
-            <span style={{ color: '#FF610B' }}>Turns Search Intent</span>{' '}
-            Into Qualified Business Opportunities
-          </h2>
+        {/* H2 — main headline */}
+        <h2
+          className="font-heading font-bold leading-tight mb-6 mx-auto"
+          style={{ fontSize: 'clamp(32px, 5vw, 50px)', color: '#000000', maxWidth: '900px' }}
+        >
+          Strategic B2B SEO That{' '}
+          <span style={{ color: '#FF610B' }}>Turns Search Intent</span>{' '}
+          Into Qualified Business Opportunities
+        </h2>
 
-          {/* Paragraph */}
-          <p
-            className="font-body text-gray-600 leading-relaxed mb-10 max-w-2xl"
-            style={{ fontSize: '18px' }}
-          >
-            Helping B2B companies capture high-intent search demand and turn organic
-            traffic into qualified leads through strategic B2B search engine optimization.
-          </p>
+        {/* Paragraph */}
+        <p
+          className="font-body text-gray-600 leading-relaxed mb-10 mx-auto"
+          style={{ fontSize: '18px', maxWidth: '680px' }}
+        >
+          Helping B2B companies capture high-intent search demand and turn organic
+          traffic into qualified leads through strategic B2B search engine optimization.
+        </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-primary">
-              Book Free SEO Strategy Call
-            </Link>
-            <Link href="/services" className="btn-outline">
-              Explore B2B SEO Services
-            </Link>
-          </div>
+        {/* CTAs */}
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link href="/contact" className="btn-primary">
+            Book Free SEO Strategy Call
+          </Link>
+          <Link href="/services" className="btn-outline">
+            Explore B2B SEO Services
+          </Link>
         </div>
       </div>
 
       {/* Client logos marquee */}
       <div className="border-t border-gray-100 py-12 bg-white">
-        <div className="container mx-auto px-5 mb-8">
-          <p className="text-center font-heading font-semibold text-navy text-lg">
-            The Go-To SEO Partner for B2B Marketing Leaders Globally
-          </p>
-        </div>
+        <p className="text-center font-heading font-semibold text-navy text-lg mb-8 px-5">
+          The Go-To SEO Partner for B2B Marketing Leaders Globally
+        </p>
         <div className="overflow-hidden">
-          {/* Duplicated list for seamless loop */}
           <div className="animate-marquee flex items-center gap-16 px-8">
             {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, i) => (
               <div
