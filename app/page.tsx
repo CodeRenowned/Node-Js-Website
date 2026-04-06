@@ -5,11 +5,11 @@ import { getRecentBlogPosts, getFeaturedImage, getExcerpt, formatDate } from '@/
 // ── Client logos data ─────────────────────────────────────────────────────────
 
 const CLIENT_LOGOS = [
-  { name: 'Carin',          src: '/images/clients/carin.png' },
-  { name: 'Frugal Testing', src: '/images/clients/frugal-testing.png' },
-  { name: 'Kajaria',        src: '/images/clients/kajaria.png' },
-  { name: 'IM Gears',       src: '/images/clients/im-gears.png' },
-  { name: 'Astra Aerospace', src: '/images/clients/astra-aerospace.png' },
+  'Carin',
+  'Frugal Testing',
+  'Kajaria',
+  'IM Gears',
+  'Astra Aerospace',
 ]
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
@@ -63,19 +63,15 @@ function Hero() {
           The Go-To SEO Partner for B2B Marketing Leaders Globally
         </p>
         <div className="overflow-hidden">
-          <div className="animate-marquee flex items-center gap-16 px-8">
-            {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((logo, i) => (
+          <div className="animate-marquee flex items-center gap-12 px-8">
+            {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((name, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 px-8 py-3 border border-gray-200 rounded-lg bg-white hover:border-primary transition-colors duration-300"
               >
-                <Image
-                  src={logo.src}
-                  alt={logo.name}
-                  width={140}
-                  height={56}
-                  className="h-12 w-auto object-contain"
-                />
+                <span className="font-heading font-bold text-gray-400 hover:text-primary text-base tracking-wide whitespace-nowrap">
+                  {name}
+                </span>
               </div>
             ))}
           </div>
